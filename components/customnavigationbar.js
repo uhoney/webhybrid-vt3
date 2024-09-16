@@ -8,6 +8,12 @@ export default function CustomNavigationBar({ navigation, route, options, back }
 
     return (
         <Appbar.Header>
+            {/* react-navigation hoitaa automaattisesti hardware backbuttonin toiminnan, siitä ei tarvi huolehtia 
+                Default Behavior: React Navigation provides default handling for the hardware back button on Android.
+                When the back button is pressed, it checks if there is a previous screen in the navigation stack.
+                If there is, it navigates back to that screen.
+            */}
+            {/* jos back true => on ruutu mihin palata => renderöi takaisinnappi  */}
             {back ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
             <Appbar.Content title={title} />
             {route.name !== "Second" && <Ionicons
